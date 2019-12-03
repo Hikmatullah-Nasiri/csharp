@@ -1,0 +1,50 @@
+Example:DialogBox Controls Or Notepad application Or TextEditor Application
+
+    private void NewOption()
+        {
+            richTextBox1.Clear();
+        }
+
+     private void CutOption()
+        {
+            richTextBox1.Cut();
+        }
+
+     private void CopyOption()
+        {
+            richTextBox1.Copy();
+        }
+
+    private void PasteOption()
+        {
+            richTextBox1.Paste();
+        }
+
+        private void OpenFileOption()
+        {
+          if(openFileDialog1.ShowDialog()==DialogResult.OK)
+            {
+                string strfile = openFileDialog1.FileName;
+                richTextBox1.LoadFile(strfile, RichTextBoxStreamType.PlainText);
+            }
+        }
+
+        private void SaveFileOption()
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string strfile = saveFileDialog1.FileName;
+                richTextBox1.SaveFile(strfile, RichTextBoxStreamType.PlainText);
+            }
+        }
+
+        private void FolderBrowserOption()
+        {
+            if(folderBrowserDialog1.ShowDialog()==DialogResult.OK)
+            {
+                string strfile = folderBrowserDialog1.SelectedPath;
+                MessageBox.Show(strfile);
+            }
+        }
+    
+
